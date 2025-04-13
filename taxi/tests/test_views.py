@@ -39,7 +39,7 @@ class ManufacturerSearchTests(TestCase):
             response,
             "There are no manufacturers in the service."
         )
-        self.assertQuerySetEqual(response.context["manufacturer_list"], [])
+        self.assertQuerysetEqual(response.context["manufacturer_list"], [])
 
     def test_search_form_retains_input(self):
         response = self.client.get(MANUFACTURERS_FORMAT_URL, {"name": "Tes"})
